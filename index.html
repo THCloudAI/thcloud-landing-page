@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THCloud.AI - Decentralized AI Cloud Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #2cf9fd;
+            --text: #ffffff;
+            --gray: #888888;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: var(--gray);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        .service {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(44, 249, 253, 0.1);
+        }
+        .service h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        .service p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        .contact-us {
+            margin-top: 4rem;
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+        .contact-us h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-us p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        .contact-us a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0.5rem;
+        }
+        .contact-us a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 249, 253, 0.3);
+        }
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            z-index: -1;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            filter: blur(150px);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .service {
+            animation: float 6s ease-in-out infinite;
+        }
+        .service:nth-child(odd) {
+            animation-delay: -3s;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (min-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            h1 {
+                font-size: 4.5rem;
+            }
+            .container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="container">
+        <header>
+            <div class="logo">THCloud.AI</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#contact-us">Contact Us</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>The Future is Decentralized AI Cloud Infrastructure</h1>
+            <p>Transform your business with Blockchain and GenAI, leveraging data, computing power, and algorithms.</p>
+        </section>
+
+        <section id="services" class="services">
+            <div class="service">
+                <h3>Object Storage</h3>
+                <p>Scalable, flexible enterprise-grade object storage with no egress and API request fees. Ideal for hot data storage and Web2 applications.</p>
+            </div>
+            <div class="service">
+                <h3>Decentralized Storage</h3>
+                <p>Cryptographically secure provable distributed storage. Immutable, tamper-proof and incentive-driven. Ideal for cold data storage and Web3 applications.</p>
+            </div>
+            <div class="service">
+                <h3>Intelligent Storage</h3>
+                <p>Bridging Web2 centralized and Web3 decentralized solutions, offering the best of both worlds. Smart tiering between hot and cold storage optimizes costs while ensuring data accessibility.</p>
+            </div>
+            <div class="service">
+                <h3>GPU Pool</h3>
+                <p>On-demand cost-effective GPUs, from affordable consumer-grade to high-performance enterprise-grade. Suitable for all stages from development to production. Optimized for AI training, inference, and analytics.</p>
+            </div>
+            <div class="service">
+                <h3>Blockchain Infrastructure Management</h3>
+                <p>Effortless deployment and management of blockchain nodes for Decentralized Physical Infrastructure Networks (DePIN). Choose our high-performance hardware or bring your own.</p>
+            </div>
+            <div class="service">
+                <h3>App Hosting</h3>
+                <p>Scalable platform for hosting and integrating diverse tools and software leveraging our Decentralized AI Cloud Infrastructure. Supports open-source and proprietary software.</p>
+            </div>
+        </section>
+
+        <section id="contact-us" class="contact-us">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to elevate your cloud infrastructure? We're here to help!</p>
+            <a href="mailto:hi@thcloud.ai">Email Us</a>
+            <a href="https://www.facebook.com/THCloudAI" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://line.me/R/ti/p/@thcloudai" target="_blank" rel="noopener noreferrer">Line</a>
+            <a href="https://twitter.com/thcloudai" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 THCloud.AI. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
